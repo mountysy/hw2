@@ -286,8 +286,8 @@ puts ""
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
 
-movie = Movie.all
-for mv in movie
+movies = Movie.all
+for mv in movies
     studio = Studio.find_by ({"id" => mv["studio_id"]})
     studio_name = studio["name"]
     puts "#{mv["title"]} #{mv["year_released"]} #{mv["rated"]} #{studio_name}"
@@ -302,8 +302,8 @@ puts ""
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
 
-role = Role.all
-for rol in role
+roles = Role.all
+for rol in roles
     movie = Movie.find_by({"id" => rol["movie_id"]})
     movie_name = movie["title"]
     actor = Actor.find_by({"id" => rol["actor_id"]})
